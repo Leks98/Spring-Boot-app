@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>MENU</h1>
+<form action="#" th:action="@{/menu}" th:object="${numerator}" method="post">
+<!--    th:action="@{/greeting}" oznacza strone do ktorej chcemy przejsc!!!-->
+    Enter number: <input type="text" th:field="*{value}"  />
+    <input type="submit" value="Check">
+     <td      th:if="${numerator.isPalindrome}">
+               Number is a palindrome
+ <td th:unless="${numerator.isPalindrome}" >
+               Number isn't a palindrome
+ </td>
+    </td>
+</form>
+<form method="POST" action="@{/menu}" enctype="multipart/form-data" >
+    <input type="file" value="Choose file" />
+    <input type="submit" value="Check">
+<!--            <tr th:each="number : ${numbers}"-->
+<!--                th:text="${number.value}">-->
+<!--                <td      th:if="${numerator.isPalindrome}">-->
+<!--                    <td>th:text= "${number.value}" </td>+ is a palindrome-->
+<!--                <td th:unless="${numerator.isPalindrome}">-->
+<!--                <td> th:text="${number.value}" </td> + isn't a palindrome>-->
+<!--                </td>-->
+<!--            </tr>-->
+</form>
+</body>
+</html>
